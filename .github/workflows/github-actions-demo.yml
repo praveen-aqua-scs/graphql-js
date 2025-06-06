@@ -1,12 +1,5 @@
 name: Aqua
-on: 
-  pull_request:
-   branches:
-   - main
-  push:
-   branches:
-      - main  # Trigger on push to main branch  
-
+on: pull_request
 jobs:
   aqua:
     name: Aqua scanner
