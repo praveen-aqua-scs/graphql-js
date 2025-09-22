@@ -26,7 +26,7 @@ resource "azurerm_virtual_machine" "example_vm" {
     # 🔐 Hardcoded secret in custom_data (this will be detected by Aqua)
     custom_data = <<-EOF
       #!/bin/bash
-      echo "MyAppPassword=HardcodedSecretAquaShouldCatch123#" >> /etc/environment
+      echo "MyAppPassword=HardcodedSecretAquaShouldCatch1234#" >> /etc/environment
     EOF
   }
 
