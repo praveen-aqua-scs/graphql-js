@@ -30,6 +30,9 @@ resource "aws_security_group" "allow_ssh" {
 resource "aws_instance" "example" {
   ami           = "ami-0c02fb55956c7d316" # Amazon Linux 2 (us-east-1)
   instance_type = "t2.micro"
+  admin_username = "azureuser"
+  # 🔐 Intentionally hardcoded for testing secret detection
+  admin_password = "AdminPassw0rd!ShouldBeDetected"
   key_name      = aws_key_pair.deployer.key_name
   security_groups = [aws_security_group.allow_ssh.name]
 
