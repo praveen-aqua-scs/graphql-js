@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        
+      - name: Add tripwire marker
+        run: echo "__TRIVY_CUSTOM_CONFIG_OK__" > trivy-marker.txt
+
 
       # sanity check: prove the config exists at repo root
       - name: Verify secret config at root
